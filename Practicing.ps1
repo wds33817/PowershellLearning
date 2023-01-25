@@ -322,7 +322,12 @@ get-process | sort id, cpu  =>  get-process | sort-object id, cpu
 
 
 get-process | sort -Property processname, cpu |format-list
+get-process | sort -Property processname, cpu |ft
 
+
+get-process | Select-Object -Property processname, cpu |ft
+=> get-process | select -Property processname, cpu |ft
+=> get-process | Select -Property processname, cpu |ft
 
 
 
