@@ -338,7 +338,16 @@ get-process | Select -Property processname -Unique => (Will give unique name for
  select-string => grep or findstr in windows.
  
  
-
+        if (<Condition1>) 
+                {<Command Block 1>}
+        [elseif (<Condition2>)
+                {<Command Block 2>}]
+        [else
+                {<Command Block 3>}]
+                
+                
+                
+                
 
 
 
