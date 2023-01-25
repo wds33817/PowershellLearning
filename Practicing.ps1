@@ -304,3 +304,16 @@ Get-service | ? {$_.status -eq "stopped"}
 
 
 Get-service | ? {($_.status -eq "running") -and ($_.Name -like "win*")}
+
+# Get all processes
+$procs = Get-Process
+
+# Get just one process
+$proc = Get-Process | Select -first 1
+
+# Check it
+$procs -contains $proc
+This will almost always be False. That's because in the time it takes to run the second command, the first process has changed. Its memory, CPU, or some other value has changed. Although $procs does contain the same actual process as $proc, not every single property is exactly the same in both instances. So -contains can't detect the match.
+
+
+
