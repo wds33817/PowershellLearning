@@ -315,5 +315,17 @@ $proc = Get-Process | Select -first 1
 $procs -contains $proc
 This will almost always be False. That's because in the time it takes to run the second command, the first process has changed. Its memory, CPU, or some other value has changed. Although $procs does contain the same actual process as $proc, not every single property is exactly the same in both instances. So -contains can't detect the match.
 
+
+
 get-process | sort id, cpu  =>  get-process | sort-object id, cpu
+
+
+
+get-process | sort -Property processname, cpu |format-list
+
+
+
+
+
+
 
