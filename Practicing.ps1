@@ -329,7 +329,15 @@ get-process | Select-Object -Property processname, cpu |ft
 => get-process | select -Property processname, cpu |ft
 => get-process | Select -Property processname, cpu |ft
 
+get-process | Select -Property processname -Unique => (Will give unique name for processname)
+-Unique is another parameter of Select-Object
 
+
+ get-service > service.txt
+ select-string -path .\service.txt -Pattern network, windows
+ select-string => grep or findstr in windows.
+ 
+ 
 
 
 
